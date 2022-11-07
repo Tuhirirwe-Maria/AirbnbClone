@@ -11,11 +11,13 @@ import {
   View,
 } from 'react-native';
 import HomeScreen from './src/screens/Home'
+import Post from './src/components/Post'
 
 const App = () =>{
   return(
     <View>
-        <HomeScreen/>
+        {/* <HomeScreen/> */}
+        <Post/>
     </View>
   )
 }
