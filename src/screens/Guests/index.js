@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import {View, Text, Pressable} from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
 import styles from './styles.js';
 
 const GuestsScreen = (props) => {
   const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
   const [infants, setInfants] = useState(0);
+  const navigation = useNavigation();
 
   return ( 
     <View style={{justifyContent: 'space-between', height: '100%'}}>

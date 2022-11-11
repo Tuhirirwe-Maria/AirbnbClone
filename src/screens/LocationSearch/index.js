@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import {View, Text, FlatList, TextInput} from 'react-native'
+import {View, Text, FlatList, TextInput, Pressable} from 'react-native'
 import styles from "./styles";
 import search from "../../../assets/data/search";
 import Entypo from 'react-native-vector-icons/Entypo';
+import { useNavigation } from "@react-navigation/native";
 
 const LocationSearch = () => {
 
     const [inputText, setInputText] = useState("")
+    const navigation = useNavigation();
 
     return(
         <View style = {styles.container}>
@@ -23,12 +25,12 @@ const LocationSearch = () => {
      <FlatList
      data={search}
      renderItem={({item}) => 
-     <View style = {styles.row}>
+     <Pressable onPress={()=> navigation.navigate("Guests")} style = {styles.row}>
         <View style = {styles.iconContainer}>
         <Entypo name={"location-pin" }size={25} color={'black'} />
         </View>
      <Text styles = {styles.locationText}>{item.description}</Text>
-    </View>
+    </Pressable>
     }
      />
         </View>
